@@ -1,0 +1,3 @@
+BFS
+Steps: 23, Nodes: 117080, Time: 1537.53ms, Memory: 26.56MB
+uLLLLulDrrrrrrRRRRRRdrU

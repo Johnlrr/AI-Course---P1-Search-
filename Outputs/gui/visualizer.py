@@ -3,9 +3,10 @@ from tkinter import ttk
 import time
 
 class MazeVisualizer:
-    def __init__(self, root, maze, cell_size=50):
+    def __init__(self, root, maze, maze_file, cell_size=50):
         self.root = root
         self.maze = maze
+        self.maze_file = maze_file
         self.cell_size = cell_size
         
         # Calculate canvas dimensions
@@ -64,6 +65,9 @@ class MazeVisualizer:
         # Draw grid
         for i in range(len(self.maze.grid)):
             for j in range(len(self.maze.grid[0])):
+                # Debugging: Print grid indices
+                #print(f"Accessing grid[{i}][{j}]")
+                
                 x1 = j * self.cell_size
                 y1 = i * self.cell_size
                 x2 = x1 + self.cell_size
@@ -150,7 +154,6 @@ class MazeVisualizer:
     
     def reset_visualization(self):
         self.is_running = False
-        self.maze.agent_pos = self.maze.agent_pos
-        self.maze.stones = self.maze.stones
+        self.maze.reset_maze(self.maze_file)
         self.draw_maze()
         self.status_label["text"] = "Ready"

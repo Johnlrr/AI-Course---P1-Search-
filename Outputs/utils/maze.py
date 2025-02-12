@@ -31,6 +31,15 @@ class Maze:
                 temp_grid.append(row_list)
                 row += 1
             self.grid = temp_grid
+
+    def reset_maze(self, filename):
+        self.weights = []
+        self.grid = []
+        self.stones = []
+        self.switches = []
+        self.agent_pos = None
+        self.load_maze(filename)
+    
     def is_valid_move(self, row, col):
         if row < 0 or row >= len(self.grid) or col < 0 or col >= len(self.grid[0]):
             return False

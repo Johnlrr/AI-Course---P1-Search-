@@ -60,10 +60,13 @@ def main():
     maze = Maze(args.input)
     
     if args.gui:
+        # Debugging: Print maze dimensions
+        #print(f"Maze dimensions: {len(maze.grid)} x {len(maze.grid[0])}")
+        
         # Start GUI
         root = tk.Tk()
         root.title("Ares's Adventure")
-        app = MazeVisualizer(root, maze)
+        app = MazeVisualizer(root, maze, args.input)
         root.mainloop()
     else:
         # Solve maze and save solution
