@@ -3,9 +3,12 @@
 #      RUN WITH GUI
 #python main.py --input ..\Inputs\input-01.txt --gui
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import tkinter as tk
-from gui.visualizer import MazeVisualizer
+from gui.visualizer import MazeVisualizer  
 from utils.maze import Maze
 from algorithms.bfs import bfs
 from algorithms.dfs import dfs      
