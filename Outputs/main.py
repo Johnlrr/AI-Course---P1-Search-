@@ -36,13 +36,14 @@ def save_solution(result, output_file):
             f.write("No solution found")
         return
 
-    with open(output_file, 'w') as f:
+    with open(output_file, 'a') as f:
         f.write(f"{result['algorithm'].upper()}\n")
         f.write(f"Steps: {result['steps']}, ")
         f.write(f"Nodes: {result['nodes']}, ")
         f.write(f"Time: {result['time']:.2f}ms, ")
         f.write(f"Memory: {result['memory']:.2f}MB\n")
         f.write(result['solution'])
+        f.write("\n")
 
 def main():
     #parse command line arguments
