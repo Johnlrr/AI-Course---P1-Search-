@@ -81,17 +81,19 @@ class MazeVisualizer:
                 
                 # Draw switch
                 if (i, j) in self.maze.switches:
-                    self.canvas.create_oval(x1+5, y1+5, x2-5, y2-5, fill='yellow')  # Adjusted padding
+                    self.canvas.create_oval(x1+5, y1+5, x2-5, y2-5, fill='yellow', outline='darkgoldenrod')  # Adjusted padding
                 
                 # Draw stone
                 if (i, j) in self.maze.stones:
                     stone_idx = self.maze.stones.index((i, j))
-                    self.canvas.create_rectangle(x1+3, y1+3, x2-3, y2-3, fill='brown')  # Adjusted padding
-                    self.canvas.create_text((x1+x2)/2, (y1+y2)/2, text=str(self.maze.weights[stone_idx]))
+                    padding = self.cell_size * 0.1
+                    self.canvas.create_rectangle(x1+padding, y1+padding, x2-padding, y2-padding, fill='brown', outline='darkred')  # Adjusted padding
+                    font_size = max(8,min(int(self.cell_size*0.4),12))
+                    self.canvas.create_text((x1+x2)/2, (y1+y2)/2, text=str(self.maze.weights[stone_idx]),font=('Arial', font_size), fill='white')
                 
                 # Draw agent
                 if (i, j) == self.maze.agent_pos:
-                    self.canvas.create_oval(x1+10, y1+10, x2-10, y2-10, fill='red')  # Adjusted padding
+                    self.canvas.create_oval(x1+10, y1+10, x2-10, y2-10, fill='red', outline='darkred')  # Adjusted padding
     
     def update_visualization(self, state):
         self.current_state = state
