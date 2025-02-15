@@ -50,6 +50,7 @@ def astar(maze):
     direction_names = ['u', 'l', 'd', 'r']
     
     nodes_generated = 1
+    total_weight = 0
     
     while open_set:
         current_f, current_g, current_state = heapq.heappop(open_set)
@@ -71,7 +72,8 @@ def astar(maze):
                 'steps': len(current_state.get_path()),
                 'nodes': nodes_generated,
                 'time': (end_time - start_time) * 1000,
-                'memory': memory_end - memory_start
+                'memory': memory_end - memory_start,
+                'total_weight': total_weight
             }
         
         for dir_idx, (dy, dx) in enumerate(directions):
@@ -104,6 +106,7 @@ def astar(maze):
                 new_stones[stone_idx] = (new_stone_row, new_stone_col)
                 action = action.upper()
                 tentative_g += maze.weights[stone_idx]
+                total_weight += maze.weights[stone_idx]
             
             new_state = State((new_row, new_col), new_stones, 
                             current_state, action)

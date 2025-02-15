@@ -1,0 +1,12 @@
+No solution foundBFS
+Steps: 23, Nodes: 117080, Time: 1592.07ms, Memory: 26.59MB, Total Weight: 686601
+uLLLLulDrrrrrrRRRRRRdrU
+BFS
+Steps: 23, Nodes: 117080, Time: 1625.34ms, Memory: 26.65MB, Total Weight: 12
+uLLLLulDrrrrrrRRRRRRdrU
+BFS
+Steps: 23, Nodes: 117080, Time: 1651.00ms, Memory: 26.58MB, Total Weight: 686601
+uLLLLulDrrrrrrRRRRRRdrU
+GREEDY
+Steps: 25, Nodes: 262, Time: 4.00ms, Memory: 0.07MB, Total Weight: 1094
+uLLLLulDurrrdrrrRRRRRRdrU

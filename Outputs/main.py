@@ -41,7 +41,8 @@ def save_solution(result, output_file):
         f.write(f"Steps: {result['steps']}, ")
         f.write(f"Nodes: {result['nodes']}, ")
         f.write(f"Time: {result['time']:.2f}ms, ")
-        f.write(f"Memory: {result['memory']:.2f}MB\n")
+        f.write(f"Memory: {result['memory']:.2f}MB, ")
+        f.write(f"Total Weight: {result['total_weight']}\n")
         f.write(result['solution'])
         f.write("\n")
 
